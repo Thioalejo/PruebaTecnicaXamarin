@@ -2333,6 +2333,9 @@ namespace PruebaTecnicaXamarin
 			// aapt resource value: 0x7f080033
 			public const int FUNCTION = 2131230771;
 			
+			// aapt resource value: 0x7f08008d
+			public const int LvLibros = 2131230861;
+			
 			// aapt resource value: 0x7f080034
 			public const int META = 2131230772;
 			
@@ -2560,9 +2563,6 @@ namespace PruebaTecnicaXamarin
 			
 			// aapt resource value: 0x7f08005e
 			public const int image = 2131230814;
-			
-			// aapt resource value: 0x7f08008d
-			public const int imageView = 2131230861;
 			
 			// aapt resource value: 0x7f0800a9
 			public const int info = 2131230889;

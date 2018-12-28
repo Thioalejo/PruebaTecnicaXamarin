@@ -31,13 +31,6 @@
         android:orientation="horizontal"
         >
 
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="" />
-
         <TextView
             android:id="@+id/tvResultado"
             android:layout_width="wrap_content"
@@ -46,10 +39,15 @@
 
     </LinearLayout>
 
-    <ImageView
+    <!--<ImageView
         android:id="@+id/imageView"
         android:layout_width="275dp"
         android:layout_height="275dp"
         android:layout_margin="30dp"
-        />
+        />-->
+	<ListView
+        android:id="@+id/LvLibros"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" 
+		android:background="@drawable/abc_cab_background_top_material"/>
 </LinearLayout>

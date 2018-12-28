@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 
 using Android.App;
@@ -10,10 +11,11 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-namespace PruebaTecnicaXamarin.ServiceApi
+namespace PruebaTecnicaXamarin.Model
 {
-    public class ApiService
+    public class HttpResponse
     {
-     
+        public string Content { get; set; }
+        public HttpStatusCode HttpStatusCode { get; set; }
     }
 }
