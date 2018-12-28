@@ -9,6 +9,7 @@ using System.Net.Http;
 using Newtonsoft.Json;
 using PruebaTecnicaXamarin.Model;
 using AlertDialog = Android.App.AlertDialog;
+using Android.Content;
 
 namespace PruebaTecnicaXamarin
 {
@@ -72,7 +73,7 @@ namespace PruebaTecnicaXamarin
         private void Lista_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             string itemSeleccionado= lista.GetItemAtPosition(e.Position).ToString();
-            txtBuscar.Text = itemSeleccionado;
+            StartActivity(new Intent(Application.Context, typeof(Activity.ActivityDetalleLibro)));
         }
     }
 }
