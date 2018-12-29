@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">PruebaTecnicaXamarin</string>
-    <string name="action_settings">Settings</string>
+    <string name="detalle_libro">Detalle libro</string>
+    <string name="tamañoFuente">15dp</string>
+
+
 </resources>

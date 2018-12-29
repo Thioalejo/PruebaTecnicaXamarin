@@ -32,5 +32,5 @@ namespace PruebaTecnicaXamarin
         public List<Book> books { get; set; }
     }
 
-
+    
 }

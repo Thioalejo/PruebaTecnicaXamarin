@@ -13,13 +13,19 @@ using Android.Widget;
 
 namespace PruebaTecnicaXamarin.Activity
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme")]
+    [Activity(Label = "@string/detalle_libro", Theme = "@style/AppTheme")]
     public class ActivityDetalleLibro : AppCompatActivity
     {
+
+        private TextView title;
+        private TextView autor;
+        private TextView lenguaje;
+        private TextView descripcion;
+        private ImageView imagen;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.ActivityDetalleLibro);
+            SetContentView(Resource.Layout.activity_detalle_libro);
             // Create your application here
         }
     }

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+	<TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sams Teach Yourself the Twitter API in 24 Hours"
+	        android:textSize="15dp"
+			android:gravity="center"/>
+
+
+	<ImageView  
+         android:id="@+id/imageViewLibro"  
+         android:layout_width="wrap_content"  
+         android:layout_height="300dp"  
+         android:src="@android:drawable/sym_def_app_icon" 
+	     android:gravity="center"/> 
+
+		<TextView
+            android:id="@+id/tvAuthors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Autor"
+	        android:textSize="15dp"/>
+
+
+		 <TextView
+            android:id="@+id/tvLanguage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lenguaje" 
+		    android:textSize="15dp"/>
+
+
+		 <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Descripcion"
+	        android:textSize="15dp"/>
+
+		
+		 <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Precio" 
+	        android:textSize="15dp"/>
+		
+
+</LinearLayout>

@@ -14,6 +14,7 @@
         android:hint="Introduce libro a buscar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+		android:text="mongo"
         />
 
     <Button
