@@ -15,13 +15,13 @@ namespace PruebaTecnicaXamarin
 {
     public class ApiService
     {
-        public async Task<T> Get<T>(string url, string tecnologia)
+        public async Task<T> Get<T>(string urlBase, string prefijo)
         {
 
             try
             {
                 HttpClient client = new HttpClient();
-                var response = await client.GetAsync(url+tecnologia);
+                var response = await client.GetAsync(urlBase + prefijo);
 
                 if(response.StatusCode == System.Net.HttpStatusCode.OK)
                 {

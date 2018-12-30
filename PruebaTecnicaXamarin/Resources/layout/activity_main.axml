@@ -8,22 +8,33 @@
     android:layout_centerHorizontal="true"
     android:layout_margin="10dp">
 
-
-	<EditText
-		android:id="@+id/txtBuscar"
-        android:hint="Introduce libro a buscar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-		android:text="mongo"
+	<TextView
+            android:id="@+id/tvResultado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Consulta el libro de tecnologia que necesites"
+			android:gravity="center_horizontal"
+	        android:hint="Consulta aquí"/>
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:layout_marginTop="35px">
+		<EditText
+			android:id="@+id/txtBuscar"
+			android:hint="Introduce tecnologia a buscar"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="mongo"
         />
-
-    <Button
-        android:id="@+id/btnConsultar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="Consular"
-        android:text="Consultar" />
-
+		<ImageButton
+			android:id="@+id/btnConsultar"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:onClick="Consular"
+			android:src="@mipmap/ic_action_search"
+	/>
+	</LinearLayout>
 
 
     <LinearLayout
@@ -32,12 +43,7 @@
         android:orientation="horizontal"
         >
 
-        <TextView
-            android:id="@+id/tvResultado"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Esperando Resultado..." />
-
+        
     </LinearLayout>
 
     <!--<ImageView

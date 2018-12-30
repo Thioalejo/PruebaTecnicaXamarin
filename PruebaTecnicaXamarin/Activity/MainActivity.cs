@@ -1,25 +1,20 @@
 ﻿using Android.App;
+using Android.Content;
+using Android.Content.PM;
 using Android.OS;
 using Android.Support.V7.App;
-using Android.Runtime;
 using Android.Widget;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using System.Net.Http;
 using Newtonsoft.Json;
-using PruebaTecnicaXamarin.Model;
-using AlertDialog = Android.App.AlertDialog;
-using System;
-using Android.Content;
+using System.Collections.Generic;
 
 namespace PruebaTecnicaXamarin
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true, ScreenOrientation = ScreenOrientation.Portrait)]
     public class MainActivity : AppCompatActivity
     {
         private EditText txtBuscar;
 
-        private Button btnConsularLibro;
+        private ImageButton btnConsularLibro;
         private string IdLibro;
         private ListView lista;
         private List<string> datos;
@@ -27,6 +22,7 @@ namespace PruebaTecnicaXamarin
 
         private ApiService client = new ApiService();
         private Libro consultar;
+        private Utils.Constantes constantes;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -35,7 +31,7 @@ namespace PruebaTecnicaXamarin
             SetContentView(Resource.Layout.activity_main);
             txtBuscar = (EditText)FindViewById(Resource.Id.txtBuscar);
 
-            btnConsularLibro = (Button)FindViewById(Resource.Id.btnConsultar);
+            btnConsularLibro = (ImageButton)FindViewById(Resource.Id.btnConsultar);
             btnConsularLibro.Click += BtnConsultar_Click;
             lista = FindViewById<ListView>(Resource.Id.LvLibros);
             datos = new List<string>();
@@ -55,9 +51,7 @@ namespace PruebaTecnicaXamarin
 
             foreach (var Libro in consultar.books)
             {
-                datos.Add("Title:" + Libro.title);
-
-                
+                datos.Add("Title:" + Libro.title);         
             }
             ListView();
         }
@@ -86,7 +80,12 @@ namespace PruebaTecnicaXamarin
             {
                 if (tituloItemSeleccionado.Contains(item.title))
                 {
-                    StartActivity(new Intent(Application.Context, typeof(Activity.ActivityDetalleLibro)));
+
+                    //StartActivity(Activity.ActivityDetalleLibro);
+                    Intent i = new Intent(this, typeof(Activity.ActivityDetalleLibro));
+                    i.PutExtra("key", item.isbn13);
+                    StartActivity(i);
+                    //StartActivity(new Intent(Application.Context, typeof(Activity.ActivityDetalleLibro)));
                 }
             }
         }
