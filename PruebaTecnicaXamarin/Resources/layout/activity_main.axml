@@ -5,31 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 	android:orientation="vertical"
-    android:layout_centerHorizontal="true"
+	android:textAlignment="center"   
 	android:background="#38c7ba">
-
-	<TextView
-            android:id="@+id/tvResultado"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Consulta el libro de tecnologia que necesites"
-			android:gravity="center_horizontal"
-	        />
 	<LinearLayout
-		android:layout_width="match_parent"
+		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:orientation="horizontal"
 		android:layout_marginTop="35px">
 		<EditText
 			android:id="@+id/txtBuscar"
-			android:hint="Introduce tecnologia a buscar"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:text=""
+			android:hint="@string/app_name"
+			android:layout_width="269.5dp"
+			android:layout_height="match_parent"
         />
 		<ImageButton
 			android:id="@+id/btnConsultar"
-			android:layout_width="match_parent"
+			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:onClick="Consular"
 			android:src="@mipmap/ic_action_search"
@@ -45,6 +36,7 @@
 
         
     </LinearLayout>
+
 	<ListView
         android:id="@+id/LvLibros"
         android:layout_width="match_parent"

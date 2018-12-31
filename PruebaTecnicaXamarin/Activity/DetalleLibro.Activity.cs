@@ -9,7 +9,7 @@ using Square.Picasso;
 
 namespace PruebaTecnicaXamarin.Activity
 {
-    [Activity(Label = "@string/detalle_libro", Theme = "@style/AppTheme", ScreenOrientation = ScreenOrientation.Portrait)]
+    [Activity(Label = "@string/detail_book", Theme = "@style/AppTheme", ScreenOrientation = ScreenOrientation.Portrait)]
     public class ActivityDetalleLibro : AppCompatActivity
     {
         private TextView title;
