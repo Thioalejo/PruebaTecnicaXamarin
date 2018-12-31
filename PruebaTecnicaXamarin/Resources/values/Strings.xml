@@ -2,6 +2,8 @@
     <string name="app_name">PruebaTecnicaXamarin</string>
     <string name="detalle_libro">Detalle libro</string>
     <string name="tamañoFuente">15dp</string>
+   <string name="tituloPagePrincipal">Consulta el libro de tecnologia que necesites</string>
+  
 
 
 </resources>

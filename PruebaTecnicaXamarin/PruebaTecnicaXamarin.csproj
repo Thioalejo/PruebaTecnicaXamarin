@@ -57,13 +57,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activity\DetalleLibro.Activity.cs" />
-    <Compile Include="Model\Libro.cs" />
     <Compile Include="Activity\MainActivity.cs" />
-    <Compile Include="Model\HttpResponse.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service\ApiService.cs" />
-    <Compile Include="Util\Constantes.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -127,6 +123,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_action_search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Libros.Core\Libros.Core.csproj">
+      <Project>{beb8412a-749c-4819-83ee-a6b54eb8639f}</Project>
+      <Name>Libros.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

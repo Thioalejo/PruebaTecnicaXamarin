@@ -3309,6 +3309,9 @@ namespace PruebaTecnicaXamarin
 			// aapt resource value: 0x7f09002b
 			public const int tamañoFuente = 2131296299;
 			
+			// aapt resource value: 0x7f09002c
+			public const int tituloPagePrincipal = 2131296300;
+			
 			static String()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();

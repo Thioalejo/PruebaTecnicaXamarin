@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PruebaTecnicaXamarin", "PruebaTecnicaXamarin\PruebaTecnicaXamarin.csproj", "{C814F453-72DC-459F-8F31-F602C2D1CFEC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Libros.Core", "Libros.Core\Libros.Core.csproj", "{BEB8412A-749C-4819-83EE-A6B54EB8639F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,10 @@ Global
 		{C814F453-72DC-459F-8F31-F602C2D1CFEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C814F453-72DC-459F-8F31-F602C2D1CFEC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C814F453-72DC-459F-8F31-F602C2D1CFEC}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{BEB8412A-749C-4819-83EE-A6B54EB8639F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEB8412A-749C-4819-83EE-A6B54EB8639F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEB8412A-749C-4819-83EE-A6B54EB8639F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEB8412A-749C-4819-83EE-A6B54EB8639F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
 	android:orientation="vertical"
     android:layout_centerHorizontal="true"
-    android:layout_margin="10dp">
+	android:background="#38c7ba">
 
 	<TextView
             android:id="@+id/tvResultado"
@@ -14,7 +14,7 @@
             android:layout_height="wrap_content"
             android:text="Consulta el libro de tecnologia que necesites"
 			android:gravity="center_horizontal"
-	        android:hint="Consulta aquí"/>
+	        />
 	<LinearLayout
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
@@ -25,7 +25,7 @@
 			android:hint="Introduce tecnologia a buscar"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:text="mongo"
+			android:text=""
         />
 		<ImageButton
 			android:id="@+id/btnConsultar"
@@ -45,16 +45,9 @@
 
         
     </LinearLayout>
-
-    <!--<ImageView
-        android:id="@+id/imageView"
-        android:layout_width="275dp"
-        android:layout_height="275dp"
-        android:layout_margin="30dp"
-        />-->
 	<ListView
         android:id="@+id/LvLibros"
         android:layout_width="match_parent"
         android:layout_height="match_parent" 
-		android:background="@drawable/abc_cab_background_top_material"/>
+		android:background="#38c7ba"/>
 </LinearLayout>
