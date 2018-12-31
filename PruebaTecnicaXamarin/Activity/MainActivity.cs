@@ -4,6 +4,7 @@ using Android.Content.PM;
 using Android.OS;
 using Android.Support.V7.App;
 using Android.Widget;
+using Libros.Core.Service;
 using Libros.Core.Utils;
 using System.Collections.Generic;
 
@@ -19,7 +20,9 @@ namespace PruebaTecnicaXamarin
         private ListView lista;
         private List<string> datos;
         private ApiService client = new ApiService();
+        private CheckConnectionInternet checkConnection = new CheckConnectionInternet();
         private Libro consultar;
+
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -41,26 +44,49 @@ namespace PruebaTecnicaXamarin
         }
 
         private void BtnConsultar_Click(object sender, System.EventArgs e)
-        {
-           
-            ConsultarLibros();
-            
+        { 
+            ConsultarLibros();   
         }
 
         private async void ConsultarLibros()
         {
-            loading.Visibility = Android.Views.ViewStates.Visible;
-            progressBar.Visibility = Android.Views.ViewStates.Visible;
-            datos.Clear();
-            consultar = await client.Get<Libro>(Constants.URLSEARCH, txtBuscar.Text);
 
-            foreach (var Libro in consultar.books)
+
+            //para verificar internet
+            var connection = await this.checkConnection.CheckConnection();
+
+            if (!connection.IsSucces)
             {
-                datos.Add("Title: " + Libro.title);
+                Android.App.AlertDialog.Builder alertDialog = new Android.App.AlertDialog.Builder(this);
+                alertDialog.SetTitle("Alert connectivity");
+                alertDialog.SetMessage("Please check your internet connection.");
+                alertDialog.SetNeutralButton("Ok", delegate
+                {
+                    alertDialog.Dispose();
+                });
+                alertDialog.Show();
+                return;
             }
-            ListView();
-            loading.Visibility = Android.Views.ViewStates.Invisible;
-            progressBar.Visibility = Android.Views.ViewStates.Invisible;
+
+            if (txtBuscar.Text != "")
+            {
+                loading.Visibility = Android.Views.ViewStates.Visible;
+                progressBar.Visibility = Android.Views.ViewStates.Visible;
+                datos.Clear();
+                consultar = await client.Get<Libro>(Constants.URLSEARCH, txtBuscar.Text);
+
+                foreach (var Libro in consultar.books)
+                {
+                    datos.Add("Title: " + Libro.title);
+                }
+                ListView();
+                loading.Visibility = Android.Views.ViewStates.Invisible;
+                progressBar.Visibility = Android.Views.ViewStates.Invisible;
+            }
+            else
+            {
+                Toast.MakeText(this, Resource.String.aler_type_book, ToastLength.Long).Show();
+            }
         }
 
         private void ListView()

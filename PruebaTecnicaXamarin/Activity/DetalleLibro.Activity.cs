@@ -7,6 +7,7 @@ using Android.Widget;
 using Libros.Core.Utils;
 using Libros.Core.Model;
 using Square.Picasso;
+using Libros.Core.Service;
 
 namespace PruebaTecnicaXamarin.Activity
 {
@@ -20,6 +21,7 @@ namespace PruebaTecnicaXamarin.Activity
         private TextView price;
         private TextView descripcion;
         private ApiService client = new ApiService();
+        private CheckConnectionInternet checkConnection = new CheckConnectionInternet();
         private DetailBook consultar;
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -38,6 +40,22 @@ namespace PruebaTecnicaXamarin.Activity
         public async void BuscarDetalleLibro()
         {
             string obj = this.Intent.GetStringExtra("key");
+
+            //para verificar internet
+            var connection = await this.checkConnection.CheckConnection();
+
+            if (!connection.IsSucces)
+            {
+                Android.App.AlertDialog.Builder alertDialog = new Android.App.AlertDialog.Builder(this);
+                alertDialog.SetTitle("");
+                alertDialog.SetMessage("");
+                alertDialog.SetNeutralButton("Ok", delegate
+                {
+                    alertDialog.Dispose();
+                });
+
+                return;
+            }
             consultar = await client.Get<DetailBook>(Constants.URLDETAILBOOK, obj.ToString());
 
             title.Text = consultar.title;

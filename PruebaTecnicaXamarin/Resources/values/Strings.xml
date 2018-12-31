@@ -2,5 +2,7 @@
     <string name="app_name">Search book</string>
     <string name="detail_book">Detail book</string>
     <string name="description_book">Description</string>
+    <string name="aler_type_book">You must enter the book to search.</string>
+  
   
 </resources>

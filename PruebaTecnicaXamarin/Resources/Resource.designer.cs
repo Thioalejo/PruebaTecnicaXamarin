@@ -2432,8 +2432,8 @@ namespace PruebaTecnicaXamarin
 			// aapt resource value: 0x7f08003c
 			public const int bottom = 2131230780;
 			
-			// aapt resource value: 0x7f080097
-			public const int btnConsultar = 2131230871;
+			// aapt resource value: 0x7f080096
+			public const int btnConsultar = 2131230870;
 			
 			// aapt resource value: 0x7f080062
 			public const int buttonPanel = 2131230818;
@@ -2564,8 +2564,8 @@ namespace PruebaTecnicaXamarin
 			// aapt resource value: 0x7f08005e
 			public const int image = 2131230814;
 			
-			// aapt resource value: 0x7f08008c
-			public const int imageViewLibro = 2131230860;
+			// aapt resource value: 0x7f08008b
+			public const int imageViewLibro = 2131230859;
 			
 			// aapt resource value: 0x7f0800b6
 			public const int info = 2131230902;
@@ -2588,11 +2588,8 @@ namespace PruebaTecnicaXamarin
 			// aapt resource value: 0x7f080018
 			public const int line3 = 2131230744;
 			
-			// aapt resource value: 0x7f08008a
-			public const int linearLayout1 = 2131230858;
-			
-			// aapt resource value: 0x7f080093
-			public const int linearLayout2 = 2131230867;
+			// aapt resource value: 0x7f080092
+			public const int linearLayout2 = 2131230866;
 			
 			// aapt resource value: 0x7f08001c
 			public const int listMode = 2131230748;
@@ -2651,8 +2648,8 @@ namespace PruebaTecnicaXamarin
 			// aapt resource value: 0x7f08004c
 			public const int pin = 2131230796;
 			
-			// aapt resource value: 0x7f080098
-			public const int progressBarList = 2131230872;
+			// aapt resource value: 0x7f080097
+			public const int progressBarList = 2131230871;
 			
 			// aapt resource value: 0x7f080006
 			public const int progress_circular = 2131230726;
@@ -2843,38 +2840,41 @@ namespace PruebaTecnicaXamarin
 			// aapt resource value: 0x7f080013
 			public const int transition_transform = 2131230739;
 			
+			// aapt resource value: 0x7f08008c
+			public const int tvAuthors = 2131230860;
+			
 			// aapt resource value: 0x7f08008d
-			public const int tvAuthors = 2131230861;
-			
-			// aapt resource value: 0x7f08008e
-			public const int tvAuthorsDescription = 2131230862;
-			
-			// aapt resource value: 0x7f080095
-			public const int tvDescription = 2131230869;
+			public const int tvAuthorsDescription = 2131230861;
 			
 			// aapt resource value: 0x7f080094
-			public const int tvDescriptionName = 2131230868;
+			public const int tvDescription = 2131230868;
+			
+			// aapt resource value: 0x7f080093
+			public const int tvDescriptionName = 2131230867;
+			
+			// aapt resource value: 0x7f08008e
+			public const int tvLanguage = 2131230862;
 			
 			// aapt resource value: 0x7f08008f
-			public const int tvLanguage = 2131230863;
-			
-			// aapt resource value: 0x7f080090
-			public const int tvLanguageDescription = 2131230864;
+			public const int tvLanguageDescription = 2131230863;
 			
 			// aapt resource value: 0x7f080099
-			public const int tvLoading = 2131230873;
+			public const int tvList = 2131230873;
+			
+			// aapt resource value: 0x7f080098
+			public const int tvLoading = 2131230872;
+			
+			// aapt resource value: 0x7f080090
+			public const int tvPrice = 2131230864;
 			
 			// aapt resource value: 0x7f080091
-			public const int tvPrice = 2131230865;
+			public const int tvPriceDescription = 2131230865;
 			
-			// aapt resource value: 0x7f080092
-			public const int tvPriceDescription = 2131230866;
+			// aapt resource value: 0x7f08008a
+			public const int tvTitle = 2131230858;
 			
-			// aapt resource value: 0x7f08008b
-			public const int tvTitle = 2131230859;
-			
-			// aapt resource value: 0x7f080096
-			public const int txtBuscar = 2131230870;
+			// aapt resource value: 0x7f080095
+			public const int txtBuscar = 2131230869;
 			
 			// aapt resource value: 0x7f08002c
 			public const int uniform = 2131230764;
@@ -3272,6 +3272,9 @@ namespace PruebaTecnicaXamarin
 			
 			// aapt resource value: 0x7f090012
 			public const int abc_toolbar_collapse_description = 2131296274;
+			
+			// aapt resource value: 0x7f09002c
+			public const int aler_type_book = 2131296300;
 			
 			// aapt resource value: 0x7f090029
 			public const int app_name = 2131296297;
