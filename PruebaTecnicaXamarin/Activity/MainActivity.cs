@@ -12,6 +12,7 @@ namespace PruebaTecnicaXamarin
     public class MainActivity : AppCompatActivity
     {
         private TextView loading;
+        private ProgressBar progressBar;
         private EditText txtBuscar;
         private ImageButton btnConsularLibro;
         private ListView lista;
@@ -25,10 +26,12 @@ namespace PruebaTecnicaXamarin
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
             loading = (TextView)FindViewById(Resource.Id.tvLoading);
+            progressBar = (ProgressBar)FindViewById(Resource.Id.progressBarList);
             loading.Visibility = Android.Views.ViewStates.Invisible;
-        
+            progressBar.Visibility = Android.Views.ViewStates.Invisible;
 
-        txtBuscar = (EditText)FindViewById(Resource.Id.txtBuscar);
+
+            txtBuscar = (EditText)FindViewById(Resource.Id.txtBuscar);
 
             btnConsularLibro = (ImageButton)FindViewById(Resource.Id.btnConsultar);
             btnConsularLibro.Click += BtnConsultar_Click;
@@ -46,6 +49,7 @@ namespace PruebaTecnicaXamarin
         private async void ConsultarLibros()
         {
             loading.Visibility = Android.Views.ViewStates.Visible;
+            progressBar.Visibility = Android.Views.ViewStates.Visible;
             datos.Clear();
             consultar = await client.Get<Libro>("https://api.itbook.store/1.0/search/", txtBuscar.Text);
 
@@ -55,6 +59,7 @@ namespace PruebaTecnicaXamarin
             }
             ListView();
             loading.Visibility = Android.Views.ViewStates.Invisible;
+            progressBar.Visibility = Android.Views.ViewStates.Invisible;
         }
 
         private void ListView()

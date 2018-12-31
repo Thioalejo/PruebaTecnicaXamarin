@@ -36,13 +36,21 @@
 
         
     </LinearLayout>
+
+	    <ProgressBar
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+		android:id="@+id/progressBarList"
+         style="@android:style/Widget.ProgressBar.Small"
+         android:layout_marginRight="5dp" />
+
 	<TextView
 				android:id="@+id/tvLoading"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:gravity="center"
 		        android:text="Loading..."
 				android:textSize="15dp"/>
+
 	<ListView
         android:id="@+id/LvLibros"
         android:layout_width="match_parent"
