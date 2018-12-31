@@ -11,8 +11,8 @@ namespace PruebaTecnicaXamarin
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true, ScreenOrientation = ScreenOrientation.Portrait)]
     public class MainActivity : AppCompatActivity
     {
+        private TextView loading;
         private EditText txtBuscar;
-
         private ImageButton btnConsularLibro;
         private ListView lista;
         private List<string> datos;
@@ -24,7 +24,11 @@ namespace PruebaTecnicaXamarin
             base.OnCreate(savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
-            txtBuscar = (EditText)FindViewById(Resource.Id.txtBuscar);
+            loading = (TextView)FindViewById(Resource.Id.tvLoading);
+            loading.Visibility = Android.Views.ViewStates.Invisible;
+        
+
+        txtBuscar = (EditText)FindViewById(Resource.Id.txtBuscar);
 
             btnConsularLibro = (ImageButton)FindViewById(Resource.Id.btnConsultar);
             btnConsularLibro.Click += BtnConsultar_Click;
@@ -34,11 +38,14 @@ namespace PruebaTecnicaXamarin
 
         private void BtnConsultar_Click(object sender, System.EventArgs e)
         {
+           
             ConsultarLibros();
+            
         }
 
         private async void ConsultarLibros()
         {
+            loading.Visibility = Android.Views.ViewStates.Visible;
             datos.Clear();
             consultar = await client.Get<Libro>("https://api.itbook.store/1.0/search/", txtBuscar.Text);
 
@@ -47,6 +54,7 @@ namespace PruebaTecnicaXamarin
                 datos.Add("Title:" + Libro.title);
             }
             ListView();
+            loading.Visibility = Android.Views.ViewStates.Invisible;
         }
 
         private void ListView()
