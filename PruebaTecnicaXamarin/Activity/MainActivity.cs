@@ -4,6 +4,7 @@ using Android.Content.PM;
 using Android.OS;
 using Android.Support.V7.App;
 using Android.Widget;
+using Libros.Core.Utils;
 using System.Collections.Generic;
 
 namespace PruebaTecnicaXamarin
@@ -51,11 +52,11 @@ namespace PruebaTecnicaXamarin
             loading.Visibility = Android.Views.ViewStates.Visible;
             progressBar.Visibility = Android.Views.ViewStates.Visible;
             datos.Clear();
-            consultar = await client.Get<Libro>("https://api.itbook.store/1.0/search/", txtBuscar.Text);
+            consultar = await client.Get<Libro>(Constants.URLSEARCH, txtBuscar.Text);
 
             foreach (var Libro in consultar.books)
             {
-                datos.Add("Title:" + Libro.title);
+                datos.Add("Title: " + Libro.title);
             }
             ListView();
             loading.Visibility = Android.Views.ViewStates.Invisible;

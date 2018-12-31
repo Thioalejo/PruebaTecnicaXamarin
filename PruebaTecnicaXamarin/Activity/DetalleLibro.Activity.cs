@@ -4,6 +4,7 @@ using Android.Content.PM;
 using Android.OS;
 using Android.Support.V7.App;
 using Android.Widget;
+using Libros.Core.Utils;
 using Libros.Core.Model;
 using Square.Picasso;
 
@@ -37,7 +38,7 @@ namespace PruebaTecnicaXamarin.Activity
         public async void BuscarDetalleLibro()
         {
             string obj = this.Intent.GetStringExtra("key");
-            consultar = await client.Get<DetailBook>("https://api.itbook.store/1.0" + "/books/", obj.ToString());
+            consultar = await client.Get<DetailBook>(Constants.URLDETAILBOOK, obj.ToString());
 
             title.Text = consultar.title;
             
