@@ -5,13 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 	android:orientation="vertical"
-	android:gravity="center_horizontal">
+	android:gravity="center_horizontal"
+	android:background="@color/colorBackground">
 	
 	<LinearLayout
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:orientation="horizontal"
-		android:layout_marginTop="35px">
+		android:layout_margin="2dp"
+		android:background="@android:color/white">
 		<EditText
 			android:id="@+id/txtBuscar"
 			android:hint="@string/app_name"
@@ -24,10 +26,10 @@
 			android:layout_height="wrap_content"
 			android:onClick="Consular"
 			android:src="@mipmap/ic_action_search"/>
+
+	
 	</LinearLayout>
-
-
-	 <ProgressBar
+		 <ProgressBar
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
 		 android:id="@+id/progressBarList"
@@ -40,6 +42,8 @@
 		android:layout_height="wrap_content"
 	    android:text="Loading..."
 		android:textSize="15dp"/>
+
+	
 
 <LinearLayout
         android:layout_width="match_parent"
@@ -61,6 +65,6 @@
         android:id="@+id/LvLibros"
         android:layout_width="match_parent"
         android:layout_height="match_parent" 
-		android:background="#4bbedc"
+		android:background="@color/colorContent"
 		android:layout_margin="2dp"/>
 </LinearLayout>
