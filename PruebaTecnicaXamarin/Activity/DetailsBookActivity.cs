@@ -22,7 +22,7 @@ namespace PruebaTecnicaXamarin.Activity
         private TextView descripcion;
         private ApiService client = new ApiService();
         private CheckConnectionInternet checkConnection = new CheckConnectionInternet();
-        private DetailBook consultar;
+        private DetailBook detailbook;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -57,18 +57,18 @@ namespace PruebaTecnicaXamarin.Activity
                 alertDialog.Show();
                 return;
             }
-            consultar = await client.Get<DetailBook>(Constants.URLDETAILBOOK, obj.ToString());
+            detallebook = await client.Get<DetailBook>(Constants.URLDETAILBOOK, obj.ToString());
 
-            title.Text = consultar.title;
+            title.Text = detallebook.title;
 
             Picasso.With(this)
-            .Load(consultar.image)
+            .Load(detallebook.image)
             .Into(imagen);
 
-            autor.Text = consultar.authors;
-            lenguaje.Text = consultar.language;
-            price.Text = consultar.price;
-            descripcion.Text = consultar.desc;
+            autor.Text = detallebook.authors;
+            lenguaje.Text = detallebook.language;
+            price.Text = detallebook.price;
+            descripcion.Text = detallebook.desc;
         }
     }
 }
