@@ -22,7 +22,7 @@ namespace PruebaTecnicaXamarin
         private List<string> datos;
         private ApiService client = new ApiService();
         private CheckConnectionInternet checkConnection = new CheckConnectionInternet();
-        private Libro consultar;
+        private Libro detailbook;
 
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -35,19 +35,19 @@ namespace PruebaTecnicaXamarin
             loading.Visibility = Android.Views.ViewStates.Invisible;
             progressBar.Visibility = Android.Views.ViewStates.Invisible;
             txtBuscar = (EditText)FindViewById(Resource.Id.txtBuscar);
-            btnConsularLibro = (ImageButton)FindViewById(Resource.Id.btnConsultar);
-            btnConsularLibro.Click += BtnConsultar_Click;
+            btnConsularLibro = (ImageButton)FindViewById(Resource.Id.btndetailbook);
+            btnConsularLibro.Click += Btndetailbook_Click;
             lista = FindViewById<ListView>(Resource.Id.LvLibros);
             datos = new List<string>();
             lista.ItemClick += Lista_ItemClick;
         }
 
-        private void BtnConsultar_Click(object sender, System.EventArgs e)
+        private void Btndetailbook_Click(object sender, System.EventArgs e)
         {
-            ConsultarLibros();
+            detailbookLibros();
         }
 
-        private async void ConsultarLibros()
+        private async void detailbookLibros()
         {
             //para verificar internet
             var connection = await this.checkConnection.CheckConnection();
@@ -70,9 +70,9 @@ namespace PruebaTecnicaXamarin
                 loading.Visibility = Android.Views.ViewStates.Visible;
                 progressBar.Visibility = Android.Views.ViewStates.Visible;
                 datos.Clear();
-                consultar = await client.Get<Libro>(Constants.URLSEARCH, txtBuscar.Text);
+                detailbook = await client.Get<Libro>(Constants.URLSEARCH, txtBuscar.Text);
 
-                foreach (var Libro in consultar.books)
+                foreach (var Libro in detailbook.books)
                 {
                     datos.Add("Title: " + Libro.title);
                 }
@@ -106,7 +106,7 @@ namespace PruebaTecnicaXamarin
         {
             string tituloItemSeleccionado = lista.GetItemAtPosition(posicion).ToString();
 
-            foreach (var item in consultar.books)
+            foreach (var item in detailbook.books)
             {
                 if (tituloItemSeleccionado.Contains(item.title))
                 {
