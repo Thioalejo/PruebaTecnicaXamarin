@@ -35,7 +35,7 @@ namespace PruebaTecnicaXamarin
             loading.Visibility = Android.Views.ViewStates.Invisible;
             progressBar.Visibility = Android.Views.ViewStates.Invisible;
             txtBuscar = (EditText)FindViewById(Resource.Id.txtBuscar);
-            btnConsularLibro = (ImageButton)FindViewById(Resource.Id.btndetailbook);
+            btnConsularLibro = (ImageButton)FindViewById(Resource.Id.btnConsultar);
             btnConsularLibro.Click += Btndetailbook_Click;
             lista = FindViewById<ListView>(Resource.Id.LvLibros);
             datos = new List<string>();
