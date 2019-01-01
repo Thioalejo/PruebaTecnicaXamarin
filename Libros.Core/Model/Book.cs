@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Libros.Core.Model
+﻿namespace Libros.Core.Model
 {
-   public class Book
+    public class Book
     {
         public string title { get; set; }
         public string subtitle { get; set; }

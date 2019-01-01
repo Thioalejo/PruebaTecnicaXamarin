@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Libros.Core.Model
+﻿namespace Libros.Core.Model
 {
     public class DetailBook
     {

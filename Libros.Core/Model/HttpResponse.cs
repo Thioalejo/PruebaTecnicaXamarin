@@ -1,6 +1,4 @@
-﻿using System.Net;
-
-namespace PruebaTecnicaXamarin.Model
+﻿namespace PruebaTecnicaXamarin.Model
 {
     public class HttpResponse
     {

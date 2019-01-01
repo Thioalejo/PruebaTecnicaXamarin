@@ -3,6 +3,7 @@ using Android.Content;
 using Android.Content.PM;
 using Android.OS;
 using Android.Support.V7.App;
+using Android.Views.InputMethods;
 using Android.Widget;
 using Libros.Core.Service;
 using Libros.Core.Utils;
@@ -33,25 +34,21 @@ namespace PruebaTecnicaXamarin
             progressBar = (ProgressBar)FindViewById(Resource.Id.progressBarList);
             loading.Visibility = Android.Views.ViewStates.Invisible;
             progressBar.Visibility = Android.Views.ViewStates.Invisible;
-
-
             txtBuscar = (EditText)FindViewById(Resource.Id.txtBuscar);
-
             btnConsularLibro = (ImageButton)FindViewById(Resource.Id.btnConsultar);
             btnConsularLibro.Click += BtnConsultar_Click;
             lista = FindViewById<ListView>(Resource.Id.LvLibros);
             datos = new List<string>();
+            lista.ItemClick += Lista_ItemClick;
         }
 
         private void BtnConsultar_Click(object sender, System.EventArgs e)
-        { 
-            ConsultarLibros();   
+        {
+            ConsultarLibros();
         }
 
         private async void ConsultarLibros()
         {
-
-
             //para verificar internet
             var connection = await this.checkConnection.CheckConnection();
 
@@ -79,26 +76,29 @@ namespace PruebaTecnicaXamarin
                 {
                     datos.Add("Title: " + Libro.title);
                 }
-                ListView();
                 loading.Visibility = Android.Views.ViewStates.Invisible;
                 progressBar.Visibility = Android.Views.ViewStates.Invisible;
+
             }
             else
             {
                 Toast.MakeText(this, Resource.String.aler_type_book, ToastLength.Long).Show();
             }
+            ListView();
+
+            //para cerrar el teclado una vez finalice la busqueda.
+            InputMethodManager inputManager = (InputMethodManager)this.GetSystemService(Context.InputMethodService);
+            inputManager.HideSoftInputFromWindow(this.CurrentFocus.WindowToken, HideSoftInputFlags.NotAlways);
         }
 
         private void ListView()
         {
             //lo que va a mostrar la vista listview
             lista.Adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, datos);
-
-            lista.ItemClick += Lista_ItemClick;
         }
 
         private void Lista_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
-        {
+        { 
             EncotrarLibroSeleccionado(e.Position);
         }
 
@@ -110,7 +110,7 @@ namespace PruebaTecnicaXamarin
             {
                 if (tituloItemSeleccionado.Contains(item.title))
                 {
-                    Intent activityDetalleLibro = new Intent(this, typeof(Activity.ActivityDetalleLibro));
+                    Intent activityDetalleLibro = new Intent(this, typeof(Activity.DetailsBookActivity));
                     activityDetalleLibro.PutExtra("key", item.isbn13);
                     StartActivity(activityDetalleLibro);
                 }
