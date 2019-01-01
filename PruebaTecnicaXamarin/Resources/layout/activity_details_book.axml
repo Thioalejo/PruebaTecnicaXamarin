@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+	android:padding="2dp"
+	android:background="@color/colorBackground">
+
+<ScrollView
+	android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+		android:background="@color/colorContent">
 	<LinearLayout
 		android:orientation="vertical"
 		android:minWidth="25px"
 		android:minHeight="25px"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
-		android:gravity="center_horizontal"
-		android:background="@android:color/holo_red_dark">
+		android:gravity="center_horizontal">
 		<TextView
 			android:id="@+id/tvTitle"
 			android:layout_width="wrap_content"
@@ -86,6 +93,7 @@
 				android:layout_gravity="center"
 				android:textSize="@dimen/abc_text_size_title_material"/>
 	   </LinearLayout>
+
 			<TextView
 				android:id="@+id/tvDescription"
 				android:layout_width="wrap_content"
@@ -95,3 +103,4 @@
 		</LinearLayout>
 	</LinearLayout>
 </ScrollView>
+</LinearLayout>
