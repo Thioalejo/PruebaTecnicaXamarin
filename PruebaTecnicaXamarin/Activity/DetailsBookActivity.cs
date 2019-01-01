@@ -57,18 +57,18 @@ namespace PruebaTecnicaXamarin.Activity
                 alertDialog.Show();
                 return;
             }
-            detallebook = await client.Get<DetailBook>(Constants.URLDETAILBOOK, obj.ToString());
+            detailbook = await client.Get<DetailBook>(Constants.URLDETAILBOOK, obj.ToString());
 
-            title.Text = detallebook.title;
+            title.Text = detailbook.title;
 
             Picasso.With(this)
-            .Load(detallebook.image)
+            .Load(detailbook.image)
             .Into(imagen);
 
-            autor.Text = detallebook.authors;
-            lenguaje.Text = detallebook.language;
-            price.Text = detallebook.price;
-            descripcion.Text = detallebook.desc;
+            autor.Text = detailbook.authors;
+            lenguaje.Text = detailbook.language;
+            price.Text = detailbook.price;
+            descripcion.Text = detailbook.desc;
         }
     }
 }
